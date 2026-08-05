@@ -2802,18 +2802,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Allow clicking side cards directly to rotate the carousel
+    pressCards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            if (index !== activePressIndex) {
+                update3DPressCarousel(index);
+            }
+        });
+    });
+
     // Set up Prev / Next controls
     if (pressNextBtn && pressPrevBtn) {
-        pressNextBtn.addEventListener('click', () => {
+        pressNextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             update3DPressCarousel(activePressIndex + 1);
         });
 
-        pressPrevBtn.addEventListener('click', () => {
+        pressPrevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             update3DPressCarousel(activePressIndex - 1);
         });
 
         pressDots.forEach((dot, idx) => {
-            dot.addEventListener('click', () => {
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
                 update3DPressCarousel(idx);
             });
         });
@@ -2892,18 +2904,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Allow clicking side cards directly to rotate the video carousel
+    mediaCards.forEach((card, index) => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.media-sound-btn') || e.target.closest('a')) return;
+            if (index !== activeMediaIndex) {
+                update3DMediaCarousel(index);
+            }
+        });
+    });
+
     // Set up Prev / Next controls
     if (mediaNextBtn && mediaPrevBtn) {
-        mediaNextBtn.addEventListener('click', () => {
+        mediaNextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             update3DMediaCarousel(activeMediaIndex + 1);
         });
 
-        mediaPrevBtn.addEventListener('click', () => {
+        mediaPrevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             update3DMediaCarousel(activeMediaIndex - 1);
         });
 
         mediaDots.forEach((dot, idx) => {
-            dot.addEventListener('click', () => {
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
                 update3DMediaCarousel(idx);
             });
         });

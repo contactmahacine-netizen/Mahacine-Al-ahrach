@@ -2659,17 +2659,19 @@ footer {
 /* 3D Next State (Pushed Deep to the Right in 3D Background) */
 .video-card-3d.next {
     transform: translateX(65%) translateZ(-220px) rotateY(-32deg) scale(0.72);
-    opacity: 0.4;
+    opacity: 0.55;
     z-index: 5;
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 /* 3D Prev State (Pushed Deep to the Left in 3D Background) */
 .video-card-3d.prev {
     transform: translateX(-65%) translateZ(-220px) rotateY(32deg) scale(0.72);
-    opacity: 0.4;
+    opacity: 0.55;
     z-index: 5;
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .video-card-3d.next .video-frame-wrapper,
@@ -2701,7 +2703,8 @@ footer {
 }
 
 /* 3D Carousel Navigation Buttons */
-.media-3d-nav-btn {
+.media-3d-nav-btn,
+.press-3d-nav-btn {
     position: absolute;
     top: 38%;
     transform: translateY(-50%);
@@ -2723,15 +2726,18 @@ footer {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-.media-3d-nav-btn.prev {
+.media-3d-nav-btn.prev,
+.press-3d-nav-btn.prev {
     left: 10px;
 }
 
-.media-3d-nav-btn.next {
+.media-3d-nav-btn.next,
+.press-3d-nav-btn.next {
     right: 10px;
 }
 
-.media-3d-nav-btn:hover {
+.media-3d-nav-btn:hover,
+.press-3d-nav-btn:hover {
     background: var(--accent-red);
     border-color: var(--accent-red);
     color: #ffffff;
@@ -2852,17 +2858,19 @@ footer {
 /* 3D Next State (Pushed Deep to the Right in 3D Background) */
 .press-card-3d.next {
     transform: translateX(65%) translateZ(-220px) rotateY(-32deg) scale(0.72);
-    opacity: 0.4;
+    opacity: 0.55;
     z-index: 5;
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 /* 3D Prev State (Pushed Deep to the Left in 3D Background) */
 .press-card-3d.prev {
     transform: translateX(-65%) translateZ(-220px) rotateY(32deg) scale(0.72);
-    opacity: 0.4;
+    opacity: 0.55;
     z-index: 5;
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .press-card-3d.next .press-image-wrapper,
