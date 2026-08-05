@@ -2027,25 +2027,12 @@ footer {
     }
 
     .press-card-3d.next,
-    .press-card-3d.prev {
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    /* 3D Media Stage & Video Window on Small Phones */
-    .media-3d-stage {
-        height: 560px;
-    }
-
-    .video-frame-wrapper {
-        height: 280px;
-        min-height: 260px;
-    }
-
+    .press-card-3d.prev,
     .video-card-3d.next,
     .video-card-3d.prev {
-        opacity: 0;
-        pointer-events: none;
+        opacity: 0.35;
+        pointer-events: auto;
+        cursor: pointer;
     }
 
     .press-3d-nav-btn,
@@ -2708,32 +2695,32 @@ footer {
     position: absolute;
     top: 38%;
     transform: translateY(-50%);
-    z-index: 35;
+    z-index: 1000;
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    background: rgba(15, 15, 20, 0.9);
+    background: rgba(15, 15, 20, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border-glass);
-    color: var(--text-primary);
-    font-size: 1.2rem;
+    border: 1px solid var(--accent-red);
+    color: #ffffff;
+    font-size: 1.3rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--transition-smooth);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(230, 20, 20, 0.3);
 }
 
 .media-3d-nav-btn.prev,
 .press-3d-nav-btn.prev {
-    left: 10px;
+    left: 5px;
 }
 
 .media-3d-nav-btn.next,
 .press-3d-nav-btn.next {
-    right: 10px;
+    right: 5px;
 }
 
 .media-3d-nav-btn:hover,
@@ -2759,13 +2746,16 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .media-3d-stage {
+    .media-3d-stage,
+    .press-3d-stage {
         max-width: 100%;
-        height: 440px;
+        height: 480px;
     }
-    .video-card-3d.next, .video-card-3d.prev {
-        opacity: 0;
-        pointer-events: none;
+    .video-card-3d.next, .video-card-3d.prev,
+    .press-card-3d.next, .press-card-3d.prev {
+        opacity: 0.35;
+        pointer-events: auto;
+        cursor: pointer;
     }
 }
 
