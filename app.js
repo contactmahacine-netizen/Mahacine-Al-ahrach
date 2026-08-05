@@ -2395,34 +2395,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const langLabels = { en: 'EN', fr: 'FR', es: 'ES', ru: 'RU', ar: 'AR' };
 
-    langBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        langSwitcher.classList.toggle('open');
-    });
-
-    document.addEventListener('click', () => {
-        langSwitcher.classList.remove('open');
-    });
-
-    langOptions.forEach(option => {
-        option.addEventListener('click', () => {
-            const lang = option.getAttribute('data-lang');
-            langOptions.forEach(o => o.classList.remove('active'));
-            option.classList.add('active');
-            currentLangEl.textContent = langLabels[lang];
-            langSwitcher.classList.remove('open');
-            applyTranslation(lang);
+    if (langBtn && langSwitcher) {
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langSwitcher.classList.toggle('open');
         });
-    });
 
+        document.addEventListener('click', () => {
+            langSwitcher.classList.remove('open');
+        });
+
+        langOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const lang = option.getAttribute('data-lang');
+                langOptions.forEach(o => o.classList.remove('active'));
+                option.classList.add('active');
+                if (currentLangEl) currentLangEl.textContent = langLabels[lang];
+                langSwitcher.classList.remove('open');
+                applyTranslation(lang);
+            });
+        });
+    }
 
     /* ----------------------------------------------------------
      * 4. NAVIGATION SCROLL EFFECT
      * ---------------------------------------------------------- */
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    }
 
     // Active link highlight on scroll
     const sections = document.querySelectorAll('section');
@@ -2474,21 +2477,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
     if (savedTheme === 'light') {
         htmlEl.setAttribute('data-theme', 'light');
-        themeIcon.className = 'fa-solid fa-sun';
+        if (themeIcon) themeIcon.className = 'fa-solid fa-sun';
     }
 
-    themeToggleBtn.addEventListener('click', () => {
-        const isLight = htmlEl.getAttribute('data-theme') === 'light';
-        if (isLight) {
-            htmlEl.removeAttribute('data-theme');
-            themeIcon.className = 'fa-solid fa-moon';
-            localStorage.setItem('portfolio-theme', 'dark');
-        } else {
-            htmlEl.setAttribute('data-theme', 'light');
-            themeIcon.className = 'fa-solid fa-sun';
-            localStorage.setItem('portfolio-theme', 'light');
-        }
-    });
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const isLight = htmlEl.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                htmlEl.removeAttribute('data-theme');
+                if (themeIcon) themeIcon.className = 'fa-solid fa-moon';
+                localStorage.setItem('portfolio-theme', 'dark');
+            } else {
+                htmlEl.setAttribute('data-theme', 'light');
+                if (themeIcon) themeIcon.className = 'fa-solid fa-sun';
+                localStorage.setItem('portfolio-theme', 'light');
+            }
+        });
+    }
 
 
 
@@ -2723,44 +2728,47 @@ document.addEventListener('DOMContentLoaded', () => {
      * 8. CONTACT FORM WITH TOAST NOTIFICATION
      * ---------------------------------------------------------- */
     const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const nameVal = document.getElementById('name').value;
-        const dict    = translations[currentLang];
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nameEl = document.getElementById('name');
+            const nameVal = nameEl ? nameEl.value : '';
+            const dict    = translations[currentLang] || translations['en'];
 
-        const toast = document.createElement('div');
-        toast.style.cssText = `
-            position:fixed; bottom:30px; right:30px;
-            background:rgba(17,17,21,0.97);
-            border:1px solid var(--accent-red);
-            border-radius:8px; padding:20px 28px;
-            box-shadow:0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(230,20,20,0.15);
-            z-index:9999; backdrop-filter:blur(10px);
-            opacity:0; transform:translateY(20px);
-            transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
-            display:flex; align-items:center; gap:15px;
-        `;
-        toast.innerHTML = `
-            <div style="width:36px;height:36px;border-radius:50%;border:1px solid var(--accent-red);display:flex;align-items:center;justify-content:center;color:var(--accent-red);flex-shrink:0;">
-                <i class="fa-solid fa-check"></i>
-            </div>
-            <div>
-                <h4 style="color:#fff;font-family:var(--font-heading);margin-bottom:3px;font-size:1rem;">${dict['toast-success-title']}</h4>
-                <p style="color:var(--text-secondary);font-size:0.8rem;margin:0;">${nameVal} — ${dict['toast-success-body']}</p>
-            </div>
-        `;
-        document.body.appendChild(toast);
-        toast.offsetHeight;
-        toast.style.opacity = '1';
-        toast.style.transform = 'translateY(0)';
-        contactForm.reset();
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position:fixed; bottom:30px; right:30px;
+                background:rgba(17,17,21,0.97);
+                border:1px solid var(--accent-red);
+                border-radius:8px; padding:20px 28px;
+                box-shadow:0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(230,20,20,0.15);
+                z-index:9999; backdrop-filter:blur(10px);
+                opacity:0; transform:translateY(20px);
+                transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+                display:flex; align-items:center; gap:15px;
+            `;
+            toast.innerHTML = `
+                <div style="width:36px;height:36px;border-radius:50%;border:1px solid var(--accent-red);display:flex;align-items:center;justify-content:center;color:var(--accent-red);flex-shrink:0;">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <div>
+                    <h4 style="color:#fff;font-family:var(--font-heading);margin-bottom:3px;font-size:1rem;">${dict['toast-success-title'] || 'Inquiry Sent'}</h4>
+                    <p style="color:var(--text-secondary);font-size:0.8rem;margin:0;">${nameVal} — ${dict['toast-success-body'] || 'Thank you! Your message has been sent successfully.'}</p>
+                </div>
+            `;
+            document.body.appendChild(toast);
+            toast.offsetHeight;
+            toast.style.opacity = '1';
+            toast.style.transform = 'translateY(0)';
+            contactForm.reset();
 
-        setTimeout(() => {
-            toast.style.opacity = '0';
-            toast.style.transform = 'translateY(20px)';
-            setTimeout(() => toast.remove(), 500);
-        }, 4500);
-    });
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(20px)';
+                setTimeout(() => toast.remove(), 500);
+            }, 4500);
+        });
+    }
 
     
     /* ----------------------------------------------------------
