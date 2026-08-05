@@ -2681,7 +2681,8 @@ document.addEventListener('DOMContentLoaded', () => {
     eraAccordions.forEach(accordion => {
         const header = accordion.querySelector('.era-header');
         if (!header) return;
-        header.addEventListener('click', () => {
+        header.addEventListener('click', (e) => {
+            e.preventDefault();
             const isOpen = accordion.classList.contains('open');
             accordion.classList.toggle('open');
             header.setAttribute('aria-expanded', !isOpen);
