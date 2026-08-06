@@ -2672,61 +2672,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+
     /* ----------------------------------------------------------
-     * 7. EXHIBITIONS ACCORDION & CATEGORY FILTER LOGIC
+     * 7. NEW CLEAN EXHIBITIONS ACCORDION & FILTER LOGIC
      * ---------------------------------------------------------- */
-    const eraAccordions = document.querySelectorAll('.era-accordion');
-    const exFilterBtns  = document.querySelectorAll('.ex-filter-btn');
+    const exhEraBtns = document.querySelectorAll('.exh-era-btn');
+    const exhFilterBtns = document.querySelectorAll('.exh-filter-btn');
 
     // Accordion Toggle
-    eraAccordions.forEach(accordion => {
-        const header = accordion.querySelector('.era-header');
-        if (!header) return;
-        header.addEventListener('click', (e) => {
+    exhEraBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
             e.preventDefault();
-            const isOpen = accordion.classList.contains('open');
-            accordion.classList.toggle('open');
-            header.setAttribute('aria-expanded', !isOpen);
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            const body = btn.nextElementSibling;
+            
+            btn.setAttribute('aria-expanded', !isExpanded);
+            if (body) {
+                body.style.display = isExpanded ? 'none' : 'block';
+            }
         });
     });
 
-    // Category Filter (All / Solo / Collective)
-    exFilterBtns.forEach(btn => {
+    // Category Filter (All / Solo / Group)
+    exhFilterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            const filter = btn.getAttribute('data-ex-filter');
+            const filter = btn.getAttribute('data-filter');
             
-            exFilterBtns.forEach(b => b.classList.remove('active'));
+            exhFilterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            eraAccordions.forEach(accordion => {
-                const items = accordion.querySelectorAll('.timeline-item');
+            const eraContainers = document.querySelectorAll('.exh-era');
+            eraContainers.forEach(era => {
+                const cards = era.querySelectorAll('.exh-card');
                 let visibleCount = 0;
 
-                items.forEach(item => {
-                    const itemType = item.getAttribute('data-ex-type');
-                    if (filter === 'all' || itemType === filter) {
-                        item.style.display = 'block';
+                cards.forEach(card => {
+                    const cardType = card.getAttribute('data-type');
+                    if (filter === 'all' || cardType === filter) {
+                        card.classList.remove('exh-hidden');
                         visibleCount++;
                     } else {
-                        item.style.display = 'none';
+                        card.classList.add('exh-hidden');
                     }
                 });
 
-                // Update count badge inside era header
-                const countNumEl = accordion.querySelector('.count-num');
-                if (countNumEl) countNumEl.textContent = visibleCount;
-
-                // Hide era if 0 matching items
+                // Update count label inside era header if needed or hide empty eras
                 if (visibleCount === 0) {
-                    accordion.style.display = 'none';
+                    era.style.display = 'none';
                 } else {
-                    accordion.style.display = 'block';
+                    era.style.display = 'block';
                 }
             });
         });
     });
 
-/* ----------------------------------------------------------
+    /* ----------------------------------------------------------
      * 8. CONTACT FORM WITH TOAST NOTIFICATION
      * ---------------------------------------------------------- */
     const contactForm = document.getElementById('contact-form');
@@ -2772,228 +2772,87 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
     /* ----------------------------------------------------------
-     * 9. PRESS & NEWSPAPER 3D CAROUSEL SHOWCASE LOGIC
+     * 9 & 10. REBUILT CLEAN SLIDERS FOR PRESS AND MEDIA
      * ---------------------------------------------------------- */
-    const pressCards = document.querySelectorAll('.press-card-3d');
-    const pressPrevBtn = document.getElementById('press-prev-btn');
-    const pressNextBtn = document.getElementById('press-next-btn');
-    const pressDotsContainer = document.getElementById('press-dots');
-    const pressDots = pressDotsContainer ? pressDotsContainer.querySelectorAll('.dot') : [];
+    function initSlider(trackId, prevId, nextId, dotsId) {
+        const track = document.getElementById(trackId);
+        const prevBtn = document.getElementById(prevId);
+        const nextBtn = document.getElementById(nextId);
+        const dotsContainer = document.getElementById(dotsId);
 
-    let activePressIndex = 0;
-    const totalPressCards = pressCards.length;
+        if (!track) return;
 
-    function update3DPressCarousel(newIndex) {
-        if (totalPressCards === 0) return;
+        const slides = track.querySelectorAll('.slide-card');
+        const totalSlides = slides.length;
+        if (totalSlides === 0) return;
 
-        // Circular wrapping index
-        activePressIndex = (newIndex + totalPressCards) % totalPressCards;
+        let currentIndex = 0;
 
-        pressCards.forEach((card, index) => {
-            // Remove previous positioning classes
-            card.classList.remove('active', 'next', 'prev', 'hidden');
-
-            if (index === activePressIndex) {
-                card.classList.add('active');
-            } else if (index === (activePressIndex + 1) % totalPressCards) {
-                card.classList.add('next');
-            } else if (index === (activePressIndex - 1 + totalPressCards) % totalPressCards) {
-                card.classList.add('prev');
-            } else {
-                card.classList.add('hidden');
+        // Generate pagination dots
+        if (dotsContainer) {
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
             }
-        });
+        }
 
-        // Update pagination dots
-        pressDots.forEach((dot, idx) => {
-            dot.classList.toggle('active', idx === activePressIndex);
-        });
-    }
-
-    // Allow clicking side cards directly to rotate the carousel
-    pressCards.forEach((card, index) => {
-        card.addEventListener('click', () => {
-            if (index !== activePressIndex) {
-                update3DPressCarousel(index);
-            }
-        });
-    });
-
-    // Set up Prev / Next controls
-    if (pressNextBtn && pressPrevBtn) {
-        pressNextBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            update3DPressCarousel(activePressIndex + 1);
-        });
-
-        pressPrevBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            update3DPressCarousel(activePressIndex - 1);
-        });
-
-        pressDots.forEach((dot, idx) => {
-            dot.addEventListener('click', (e) => {
-                e.stopPropagation();
-                update3DPressCarousel(idx);
+        function updateDots() {
+            if (!dotsContainer) return;
+            const dots = dotsContainer.querySelectorAll('.slider-dot');
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentIndex);
             });
-        });
-    }
+        }
 
-    // Initialize initial 3D Press Carousel
-    update3DPressCarousel(0);
+        function goToSlide(index) {
+            currentIndex = (index + totalSlides) % totalSlides;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateDots();
+        }
 
-    // Touch swipe gestures for Press 3D Carousel on mobile devices
-    const pressStage = document.querySelector('.press-3d-stage');
-    if (pressStage) {
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                goToSlide(currentIndex - 1);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                goToSlide(currentIndex + 1);
+            });
+        }
+
+        // Mobile touch swipe gestures
         let touchStartX = 0;
         let touchEndX = 0;
 
-        pressStage.addEventListener('touchstart', (e) => {
+        track.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
         }, { passive: true });
 
-        pressStage.addEventListener('touchend', (e) => {
+        track.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             const diffX = touchEndX - touchStartX;
             if (diffX < -40) {
-                update3DPressCarousel(activePressIndex + 1);
+                goToSlide(currentIndex + 1);
             } else if (diffX > 40) {
-                update3DPressCarousel(activePressIndex - 1);
+                goToSlide(currentIndex - 1);
             }
         }, { passive: true });
+
+        // Initial state
+        goToSlide(0);
     }
 
-
-
-    /* ----------------------------------------------------------
-     * 10. MEDIA 3D VIDEO CAROUSEL SHOWCASE LOGIC
-     * ---------------------------------------------------------- */
-    const mediaCards = document.querySelectorAll('.video-card-3d');
-    const mediaPrevBtn = document.getElementById('media-prev-btn');
-    const mediaNextBtn = document.getElementById('media-next-btn');
-    const mediaDotsContainer = document.getElementById('media-dots');
-    const mediaDots = mediaDotsContainer ? mediaDotsContainer.querySelectorAll('.dot') : [];
-
-    let activeMediaIndex = 0;
-    const totalMediaCards = mediaCards.length;
-
-    function update3DMediaCarousel(newIndex) {
-        if (totalMediaCards === 0) return;
-
-        // Circular wrapping index
-        activeMediaIndex = (newIndex + totalMediaCards) % totalMediaCards;
-
-        mediaCards.forEach((card, index) => {
-            // Remove previous positioning classes
-            card.classList.remove('active', 'next', 'prev', 'hidden');
-
-            const video = card.querySelector('video');
-
-            if (index === activeMediaIndex) {
-                card.classList.add('active');
-                if (video) {
-                    video.play().catch(() => {});
-                }
-            } else if (index === (activeMediaIndex + 1) % totalMediaCards) {
-                card.classList.add('next');
-                if (video) video.pause();
-            } else if (index === (activeMediaIndex - 1 + totalMediaCards) % totalMediaCards) {
-                card.classList.add('prev');
-                if (video) video.pause();
-            } else {
-                card.classList.add('hidden');
-                if (video) video.pause();
-            }
-        });
-
-        // Update pagination dots
-        mediaDots.forEach((dot, idx) => {
-            dot.classList.toggle('active', idx === activeMediaIndex);
-        });
-    }
-
-    // Allow clicking side cards directly to rotate the video carousel
-    mediaCards.forEach((card, index) => {
-        card.addEventListener('click', (e) => {
-            if (e.target.closest('.media-sound-btn') || e.target.closest('a')) return;
-            if (index !== activeMediaIndex) {
-                update3DMediaCarousel(index);
-            }
-        });
-    });
-
-    // Set up Prev / Next controls
-    if (mediaNextBtn && mediaPrevBtn) {
-        mediaNextBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            update3DMediaCarousel(activeMediaIndex + 1);
-        });
-
-        mediaPrevBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            update3DMediaCarousel(activeMediaIndex - 1);
-        });
-
-        mediaDots.forEach((dot, idx) => {
-            dot.addEventListener('click', (e) => {
-                e.stopPropagation();
-                update3DMediaCarousel(idx);
-            });
-        });
-    }
-
-    // Sound toggle buttons for quiet mode on each video card
-    document.querySelectorAll('.media-sound-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const card = btn.closest('.video-card-3d');
-            const video = card ? card.querySelector('video') : null;
-            const soundIcon = btn.querySelector('.sound-icon');
-            const soundLabel = btn.querySelector('.sound-label');
-
-            if (video) {
-                if (video.muted) {
-                    video.muted = false;
-                    btn.classList.add('unmuted');
-                    if (soundIcon) soundIcon.className = 'fa-solid fa-volume-high sound-icon';
-                    if (soundLabel) soundLabel.textContent = 'Sound Active (Click to Mute)';
-                } else {
-                    video.muted = true;
-                    btn.classList.remove('unmuted');
-                    if (soundIcon) soundIcon.className = 'fa-solid fa-volume-xmark sound-icon';
-                    if (soundLabel) {
-                        const dict = translations[currentLang] || translations['en'];
-                        soundLabel.textContent = dict['media-unmute-label'] || 'Quiet Mode (Muted) — Click to Unmute';
-                    }
-                }
-            }
-        });
-    });
-
-    // Initialize initial 3D Carousel positioning
-    update3DMediaCarousel(0);
-
-    // Touch swipe gestures for Media 3D Video Carousel on mobile devices
-    const mediaStage = document.querySelector('.media-3d-stage');
-    if (mediaStage) {
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        mediaStage.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        mediaStage.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            const diffX = touchEndX - touchStartX;
-            if (diffX < -40) {
-                update3DMediaCarousel(activeMediaIndex + 1);
-            } else if (diffX > 40) {
-                update3DMediaCarousel(activeMediaIndex - 1);
-            }
-        }, { passive: true });
-    }
+    // Initialize both sliders
+    initSlider('press-track', 'press-prev', 'press-next', 'press-dots');
+    initSlider('media-track', 'media-prev', 'media-next', 'media-dots');
 
 });

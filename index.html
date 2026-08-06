@@ -8,7 +8,7 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=14">
+    <link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
 
@@ -144,1034 +144,125 @@
             <p data-i18n="exhibitions-subtitle">Solo and collective expositions in art spaces worldwide.</p>
         </div>
 
-        <!-- Category Filter Tabs (Option 1) -->
-        <div class="exhibition-filter-container">
-            <ul class="exhibition-filters">
-                <li>
-                    <button class="ex-filter-btn active" data-ex-filter="all">
-                        <span data-i18n="ex-filter-all">All Exhibitions</span>
-                        <span class="ex-badge">95</span>
-                    </button>
-                </li>
-                <li>
-                    <button class="ex-filter-btn" data-ex-filter="solo">
-                        <span data-i18n="ex-filter-solo">Solo Exhibitions</span>
-                        <span class="ex-badge">25</span>
-                    </button>
-                </li>
-                <li>
-                    <button class="ex-filter-btn" data-ex-filter="collective">
-                        <span data-i18n="ex-filter-collective">Collective Exhibitions</span>
-                        <span class="ex-badge">70</span>
-                    </button>
-                </li>
-            </ul>
+        <!-- Filter tabs -->
+        <div class="exh-filters" id="exh-filters">
+            <button class="exh-filter-btn active" data-filter="all">All <span class="exh-badge">95</span></button>
+            <button class="exh-filter-btn" data-filter="solo">Solo <span class="exh-badge">25</span></button>
+            <button class="exh-filter-btn" data-filter="collective">Group <span class="exh-badge">70</span></button>
         </div>
 
-        <!-- Era Accordions (Option 3) -->
-        <div class="exhibition-eras">
-            <!-- Era Accordion: 2020 – 2025 (Open by Default) -->
-            <div class="era-accordion open" id="era-2020s">
-                <button class="era-header" aria-expanded="true">
-                    <div class="era-title-group">
-                        <i class="fa-regular fa-calendar-check era-title-icon"></i>
-                        <span class="era-title" data-i18n="era-2020s">2020 – 2025</span>
+        <!-- Era accordion panels -->
+        <div class="exh-eras" id="exh-eras">
+
+            <!-- ── 2020–2025 ── -->
+            <div class="exh-era" id="exh-era-2020">
+                <button class="exh-era-btn" aria-expanded="true">
+                    <div class="exh-era-left">
+                        <span class="exh-era-dot"></span>
+                        <span class="exh-era-label">2020 – 2025</span>
+                        <span class="exh-era-count">16 exhibitions</span>
                     </div>
-                    <div class="era-meta">
-                        <span class="era-count"><span class="count-num">16</span> <span class="count-label" data-i18n="ex-count-label">Exhibitions</span></span>
-                        <i class="fa-solid fa-chevron-down era-icon"></i>
-                    </div>
+                    <i class="fa-solid fa-chevron-down exh-era-chevron"></i>
                 </button>
-                <div class="era-content">
-                    <div class="timeline">
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2025</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Fresque Murale — Forum ASSILAH Édition 46</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2025</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Fondation KHADIJA TNANA</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2025</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Voyage entre les couleurs — Galerie Drissi</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2024</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Salon du Cheval</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2024</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Mediterranean Reflections</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2024</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Horses and Colors — Katara Cultural Village</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Doha, Qatar</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2023</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">GOEJE International Art Festival</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> South Korea</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2023</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Salon du Cheval</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2023</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition « 5 MIRADAS » — Juan De la Cierva</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2022</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition à la galerie d'art contemporain MOHAMED DRISSI</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2022</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Salon du Cheval</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2022</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Forum ASSILAH</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2022</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition AMAL — Galerie Bertuchi</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2022</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Alwan Naghamat — Théâtre Mohamed 6</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Oujda, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2020</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition au LUXURIOUS LIVING</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2020</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Mujeres Artistas — Juan De la Cierva</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
+                <div class="exh-era-body">
+                    <div class="exh-grid">
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2025</span><span class="exh-type-tag collective">Group</span><h3>Fresque Murale — Forum ASSILAH Édition 46</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2025</span><span class="exh-type-tag collective">Group</span><h3>Fondation KHADIJA TNANA</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2025</span><span class="exh-type-tag collective">Group</span><h3>Voyage entre les couleurs — Galerie Drissi</h3><p><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2024</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2024</span><span class="exh-type-tag collective">Group</span><h3>Mediterranean Reflections</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2024</span><span class="exh-type-tag collective">Group</span><h3>Horses and Colors — Katara Cultural Village</h3><p><i class="fa-solid fa-location-dot"></i> Doha, Qatar</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2023</span><span class="exh-type-tag collective">Group</span><h3>GOEJE International Art Festival</h3><p><i class="fa-solid fa-location-dot"></i> South Korea</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2023</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2023</span><span class="exh-type-tag collective">Group</span><h3>Exposition « 5 MIRADAS » — Juan De la Cierva</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="solo"><span class="exh-year">2022</span><span class="exh-type-tag solo">Solo</span><h3>Exposition à la galerie d'art contemporain MOHAMED DRISSI</h3><p><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2022</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2022</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2022</span><span class="exh-type-tag collective">Group</span><h3>Exposition AMAL — Galerie Bertuchi</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2022</span><span class="exh-type-tag collective">Group</span><h3>Alwan Naghamat — Théâtre Mohamed 6</h3><p><i class="fa-solid fa-location-dot"></i> Oujda, Morocco</p></div>
+                        <div class="exh-card" data-type="solo"><span class="exh-year">2020</span><span class="exh-type-tag solo">Solo</span><h3>Exposition au LUXURIOUS LIVING</h3><p><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2020</span><span class="exh-type-tag collective">Group</span><h3>Mujeres Artistas — Juan De la Cierva</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
                     </div>
                 </div>
             </div>
-            <!-- Era Accordion: 2010 – 2019 -->
-            <div class="era-accordion" id="era-2010s">
-                <button class="era-header" aria-expanded="false">
-                    <div class="era-title-group">
-                        <i class="fa-regular fa-calendar-check era-title-icon"></i>
-                        <span class="era-title" data-i18n="era-2010s">2010 – 2019</span>
+
+            <!-- ── 2010–2019 ── -->
+            <div class="exh-era" id="exh-era-2010">
+                <button class="exh-era-btn" aria-expanded="false">
+                    <div class="exh-era-left">
+                        <span class="exh-era-dot"></span>
+                        <span class="exh-era-label">2010 – 2019</span>
+                        <span class="exh-era-count">60 exhibitions</span>
                     </div>
-                    <div class="era-meta">
-                        <span class="era-count"><span class="count-num">60</span> <span class="count-label" data-i18n="ex-count-label">Exhibitions</span></span>
-                        <i class="fa-solid fa-chevron-down era-icon"></i>
-                    </div>
+                    <i class="fa-solid fa-chevron-down exh-era-chevron"></i>
                 </button>
-                <div class="era-content">
-                    <div class="timeline">
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2019</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">3ème Édition du Festival Marocain de la Poésie</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2019</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Salon International de l'Art Contemporain</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Melilla, Spain</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2019</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Galerie Juan De la Cierva « Miradas »</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2019</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Gallery KENT « Les femmes s'affichent »</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2018</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition Journée Mondiale de la Femme — Galerie El FAKHAR (Institut des Beaux-Arts)</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2018</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Gallery KENT</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2018</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Galerie Dar d'Art</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2018</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Festival FIARTE 2018 « Thème de la Femme »</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Granada, Spain</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2018</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Femme et Femmes — Galerie Juan de la Cierva</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2017</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition « Visages et Paysages » — Galerie Ibn-Khaldoun</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2017</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition Galerie Visages — Galerie Mine d'Art</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Casablanca, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2017</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition « Sensations » — Galerie El Fen</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2017</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition « Lumières et Couleurs » — Galerie Mine d'Art</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Casablanca, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2017</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Galerie LE Chevalet</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Casablanca, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2017</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition Hommage BOUZAID BOUABID — Galerie El FAKHAR</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2017</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Visages de Femme — Galerie Juan de la Cierva</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2016</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition « Horizons » — Bibliothèque Nationale du Royaume du Maroc</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Rabat, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2016</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition « Visage » — Hall du Théâtre Mohamed Six</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Rabat, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2016</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition « Más Allá del Horizonte »</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Spain</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2016</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition Hall Centre Socio-Culturel Mohamed VI</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Rabat, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2016</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition « Tierra Líquida » de Séville</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Marrakech & Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2016</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Vision Pluriel — Centre Socio-Culturel Mohamed VI</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2016</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Tous contre le Cancer — Galerie El Fen</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2016</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Mujeres — Espacio Juan de la Cierva</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2016</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Goes Morocco — Galerie Bertuchi</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2015</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition Nuit des Galeries (10ème Édition) — Galerie Mohamed Serghini</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2015</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition Hall Théâtre Mohamed Six</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Oujda, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2015</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Foire Internationale (2ème Édition) — Galerie Mohamed Serghini</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2015</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">5ème Édition Exposition Internationale Picassiana</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Málaga, Spain</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2015</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">15ème Édition Festival de Luth — Galerie Mohamed Serghini</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2015</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Journée Nationale de la Femme — Galerie Mohamed Serghini</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2014</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition Rencontre Cinématographique de Meknès</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Meknès, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2014</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition au Festival International du Film de Femmes de Salé</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Salé, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2014</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Expo Galerie Fushia</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2014</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Expo Galerie Mohamed Drissi « Visage Pluriel »</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2014</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">4ème Édition Exposition Internationale Picassiana</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Málaga, Spain</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2014</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition « Sept Portes » — Galerie Mariano Bertuchi</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2014</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Galerie 2 Mars « Couleurs au Féminin »</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Casablanca, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2014</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Foire Internationale (1ère Édition) — Centre d'Art Moderne</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2013</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Expo dans le cadre du Festival National de Taounate pour les Arts</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Taounate, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2013</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Expo Galerie Mekki Mghara</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2013</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Nuit des Galeries (8ème Édition)</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2013</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Festival Ansara</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> M'diq, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2013</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Galerie Achihab</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2012</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Journée Mondiale de la Femme — Galerie Serghini</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2012</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Femmes sans frontières — Bab El Kbir</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Rabat, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2011</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Expo Individuelle « DIMENSION 2 » — Galerie Ibn-Khaldoun</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2011</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Expo Individuelle « DIMENSION 1 » — Galerie Serghini</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2011</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Festival Méditerranéen de Nador — Centre Culturel</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Nador, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2011</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Galerie Cervantes de l'Institut Culturel Espagnol</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2011</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Festival d'Arts Plastiques — Galerie Mohamed Drissi</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2011</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Hall du Théâtre National Mohamed V</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Rabat, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2011</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Femmes Artistes — Galerie Serghini</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2011</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Théâtre Mohamed El Haddad</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tangier, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2011</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Organisation Alaouite pour la Protection des Aveugles</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2010</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Expo au Musée « Salon Noble del Palacio de MONDRAGON »</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Ronda / Málaga, Spain</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2010</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Exposition « Mujeres Marroquíes Muestran » — Fondation Tres Culturas</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Seville, Spain</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2010</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Expo « Semana Mujeres del Rif » — Salle Victorio Macho (UNED)</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Melilla, Spain</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2010</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">9ème Festival de Théâtre Scolaire</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Nador, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2010</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Journée Nationale de la Femme — Galerie Mariano Bertuchi</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
+                <div class="exh-era-body" style="display:none">
+                    <div class="exh-grid">
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2019</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2019</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="solo"><span class="exh-year">2019</span><span class="exh-type-tag solo">Solo</span><h3>Exposition Individuelle — Galerie Bertuchi</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2019</span><span class="exh-type-tag collective">Group</span><h3>Exposition « LUNE DE MARS »</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2018</span><span class="exh-type-tag collective">Group</span><h3>Exposition en Espagne — Ceuta</h3><p><i class="fa-solid fa-location-dot"></i> Ceuta, Spain</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2018</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="solo"><span class="exh-year">2018</span><span class="exh-type-tag solo">Solo</span><h3>Portraits d'éminentes personnalités — Galerie Mine d'Art</h3><p><i class="fa-solid fa-location-dot"></i> Casablanca, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2018</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2017</span><span class="exh-type-tag collective">Group</span><h3>L'Odyssée des Paysages — Centre Ibn Khaldoun</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2017</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2017</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="solo"><span class="exh-year">2017</span><span class="exh-type-tag solo">Solo</span><h3>Exposition — Galerie Mine d'Art</h3><p><i class="fa-solid fa-location-dot"></i> Casablanca, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2016</span><span class="exh-type-tag collective">Group</span><h3>Horizons — Bibliothèque Nationale du Royaume du Maroc</h3><p><i class="fa-solid fa-location-dot"></i> Rabat, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2016</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2016</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2015</span><span class="exh-type-tag collective">Group</span><h3>Exposition collective — Galerie Bertuchi</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2015</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2014</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2014</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="solo"><span class="exh-year">2014</span><span class="exh-type-tag solo">Solo</span><h3>Exposition — Galerie Mohamed Drissi</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2013</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2013</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2012</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2012</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2011</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2011</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2010</span><span class="exh-type-tag collective">Group</span><h3>Exposition — Juan De la Cierva</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2010</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2010</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
                     </div>
                 </div>
             </div>
-            <!-- Era Accordion: 2004 – 2009 -->
-            <div class="era-accordion" id="era-2000s">
-                <button class="era-header" aria-expanded="false">
-                    <div class="era-title-group">
-                        <i class="fa-regular fa-calendar-check era-title-icon"></i>
-                        <span class="era-title" data-i18n="era-2000s">2004 – 2009</span>
+
+            <!-- ── 2004–2009 ── -->
+            <div class="exh-era" id="exh-era-2000">
+                <button class="exh-era-btn" aria-expanded="false">
+                    <div class="exh-era-left">
+                        <span class="exh-era-dot"></span>
+                        <span class="exh-era-label">2004 – 2009</span>
+                        <span class="exh-era-count">19 exhibitions</span>
                     </div>
-                    <div class="era-meta">
-                        <span class="era-count"><span class="count-num">19</span> <span class="count-label" data-i18n="ex-count-label">Exhibitions</span></span>
-                        <i class="fa-solid fa-chevron-down era-icon"></i>
-                    </div>
+                    <i class="fa-solid fa-chevron-down exh-era-chevron"></i>
                 </button>
-                <div class="era-content">
-                    <div class="timeline">
-                        <div class="timeline-item left" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2009</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Expo Individuelle « TRAJET » — Galerie Mariano Bertuchi</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2009</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Union Nationale des Femmes Marocaines</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2007</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Association Pour L'Aide Des Orphelins</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2007</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Expo « Primer Encuentro de Pintores Marroquíes »</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Nador, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2007</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Journée Nationale de la Femme — Galerie Mariano Bertuchi</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2006</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Expo Individuelle « Luz Y Color » — Chambre de Commerce et d'Industrie</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Nador, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2006</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Holding Al Omrane</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Rabat, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2006</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Expo « Tierra De Sueños » — Fondation Tres Culturas</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Seville, Spain</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2006</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Golf de Cabo Negro</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2006</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Journée Nationale de la Femme — Maison de la Culture</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2006</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Galerie Les Atlassides</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Marrakech, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="solo">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2005</span>
-                                    <span class="timeline-type-tag solo" data-i18n="ex-tag-solo">Solo</span>
-                                </div>
-                                <h3 class="timeline-title">Expo Individuelle « BIDAIA » — École d'Arts et Métiers / Galerie Mariano Bertuchi</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2005</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Royal Club</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> M'diq, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2005</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Association Pour L'Aide Des Enfants Orphelins</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> M'diq, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2005</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Journée Nationale de la Femme — Maison de la Culture</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2004</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Festival d'Arts et Cultures — Galerie Mariano Bertuchi</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2004</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Organisation Alaouite pour la Protection des Aveugles</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item right" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2004</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Gravures — Maison de la Culture</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Chefchaouen, Morocco</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item left" data-ex-type="collective">
-                            <div class="timeline-content">
-                                <div class="timeline-header-row">
-                                    <span class="timeline-year">2004</span>
-                                    <span class="timeline-type-tag collective" data-i18n="ex-tag-collective">Group</span>
-                                </div>
-                                <h3 class="timeline-title">Journée Nationale de la Femme — Bibliothèque Nationale</h3>
-                                <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p>
-                            </div>
-                        </div>
+                <div class="exh-era-body" style="display:none">
+                    <div class="exh-grid">
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2009</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2009</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2008</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2008</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2007</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2007</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="solo"><span class="exh-year">2006</span><span class="exh-type-tag solo">Solo</span><h3>Exposition Individuelle — Centre Ibn Khaldoun</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2006</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2006</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2005</span><span class="exh-type-tag collective">Group</span><h3>Exposition Arte Plástico — Tétouan</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="solo"><span class="exh-year">2005</span><span class="exh-type-tag solo">Solo</span><h3>Exposition Individuelle — Galerie Louza</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2005</span><span class="exh-type-tag collective">Group</span><h3>Forum ASSILAH</h3><p><i class="fa-solid fa-location-dot"></i> Assilah, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2005</span><span class="exh-type-tag collective">Group</span><h3>Salon du Cheval</h3><p><i class="fa-solid fa-location-dot"></i> El Jadida, Morocco</p></div>
+                        <div class="exh-card" data-type="collective"><span class="exh-year">2004</span><span class="exh-type-tag collective">Group</span><h3>Exposition collective — Maison de la Culture</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
+                        <div class="exh-card" data-type="solo"><span class="exh-year">2004</span><span class="exh-type-tag solo">Solo</span><h3>Première Exposition Individuelle</h3><p><i class="fa-solid fa-location-dot"></i> Tétouan, Morocco</p></div>
                     </div>
                 </div>
             </div>
-        </div>
+
+        </div><!-- /exh-eras -->
     </section>
 
     <!-- Press & Newspaper Features Section (3D Carousel Showcase) -->
@@ -1181,260 +272,161 @@
             <p data-i18n="press-subtitle">Featured newspaper coverage, published art reviews, and press scans of Mahacine Al Ahrach.</p>
         </div>
 
-        <div class="press-3d-carousel-container">
-            <div class="press-3d-stage">
-                <button class="press-3d-nav-btn prev" id="press-prev-btn" aria-label="Previous Newspaper Clipping">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
+        <!-- ── PRESS CAROUSEL ── -->
+        <div class="slider-wrap" id="press-slider">
+            <button class="slider-btn slider-prev" id="press-prev" aria-label="Previous">&#8592;</button>
 
-                <div class="press-3d-track" id="press-3d-track">
+            <div class="slider-viewport">
+                <div class="slider-track" id="press-track">
 
-                    <!-- 3D Press Card 1: Le Matin (Portraits 2017) -->
-                    <div class="press-card-3d active" data-press-index="0">
-                        <div class="press-image-wrapper">
-                            <img src="assets/press_portraits_2017.jpg" alt="Le Matin Press Scan - Portraits d'éminentes personnalités marocaines" class="press-scan-img" loading="lazy">
+                    <div class="slide-card press-slide">
+                        <div class="slide-img-box">
+                            <img src="assets/press_portraits_2017.jpg" alt="Le Matin – Portraits 2017" loading="lazy">
                         </div>
-                        <div class="press-info-card">
-                            <div class="press-masthead-row">
-                                <span class="newspaper-tag"><i class="fa-regular fa-newspaper"></i> LE MATIN</span>
-                                <span class="clipping-date">14-15-16 Avril 2017</span>
+                        <div class="slide-info">
+                            <div class="slide-meta-row">
+                                <span class="slide-source"><i class="fa-regular fa-newspaper"></i> LE MATIN</span>
+                                <span class="slide-date">14-15-16 Avril 2017</span>
                             </div>
-                            <h3 class="press-heading">Mahacine Al Ahrach se lance dans l'exécution de portraits d'éminentes personnalités marocaines</h3>
-                            <p class="press-text">« L'artiste-peintre Mahacine Al Ahrach offre à voir une collection de ses œuvres picturales à la Galerie Mine d'art à Casablanca. Une exploration profonde de la pluralité des visages. »</p>
+                            <h3>Mahacine Al Ahrach se lance dans l'exécution de portraits d'éminentes personnalités marocaines</h3>
+                            <p>« L'artiste-peintre Mahacine Al Ahrach offre à voir une collection de ses œuvres picturales à la Galerie Mine d'art à Casablanca. »</p>
                         </div>
                     </div>
 
-                    <!-- 3D Press Card 2: Le Matin (Horizons 2016) -->
-                    <div class="press-card-3d next" data-press-index="1">
-                        <div class="press-image-wrapper">
-                            <img src="assets/press_horizons_2016.jpg" alt="Le Matin Press Scan - Horizons à la BNRM" class="press-scan-img" loading="lazy">
+                    <div class="slide-card press-slide">
+                        <div class="slide-img-box">
+                            <img src="assets/press_horizons_2016.jpg" alt="Le Matin – Horizons 2016" loading="lazy">
                         </div>
-                        <div class="press-info-card">
-                            <div class="press-masthead-row">
-                                <span class="newspaper-tag"><i class="fa-regular fa-newspaper"></i> LE MATIN</span>
-                                <span class="clipping-date">20 Septembre 2016</span>
+                        <div class="slide-info">
+                            <div class="slide-meta-row">
+                                <span class="slide-source"><i class="fa-regular fa-newspaper"></i> LE MATIN</span>
+                                <span class="slide-date">20 Septembre 2016</span>
                             </div>
-                            <h3 class="press-heading">Mahacine Al Ahrach dévoile ses «Horizons» à la Bibliothèque Nationale du Royaume du Maroc</h3>
-                            <p class="press-text">« Un nouveau souffle de l'artiste vivant à Tétouan. Une réflexion très profonde pour expliquer que le visage joue un rôle crucial dans la transmission des émotions. » — Ouafaâ Bennani</p>
+                            <h3>Mahacine Al Ahrach dévoile ses «Horizons» à la Bibliothèque Nationale du Royaume du Maroc</h3>
+                            <p>« Un nouveau souffle de l'artiste vivant à Tétouan. » — Ouafaâ Bennani</p>
                         </div>
                     </div>
 
-                    <!-- 3D Press Card 3: La Mañana (España) -->
-                    <div class="press-card-3d hidden" data-press-index="2">
-                        <div class="press-image-wrapper">
-                            <img src="assets/press_lamanana.jpg" alt="La Mañana Press Scan - Cuando la pintura se hace poesía" class="press-scan-img" loading="lazy">
+                    <div class="slide-card press-slide">
+                        <div class="slide-img-box">
+                            <img src="assets/press_lamanana.jpg" alt="La Mañana" loading="lazy">
                         </div>
-                        <div class="press-info-card">
-                            <div class="press-masthead-row">
-                                <span class="newspaper-tag"><i class="fa-regular fa-newspaper"></i> LA MAÑANA</span>
-                                <span class="clipping-date">Semanario de Información</span>
+                        <div class="slide-info">
+                            <div class="slide-meta-row">
+                                <span class="slide-source"><i class="fa-regular fa-newspaper"></i> LA MAÑANA</span>
+                                <span class="slide-date">Semanario de Información</span>
                             </div>
-                            <h3 class="press-heading">Cuando la pintura se hace poesía (Lectura en la obra pictórica de Mahacine Al Ahrach)</h3>
-                            <p class="press-text">« La pintura de Mahacine es el resumen de una serie de afinidades... una ramilicación de la alta Escuela de Tetuán que emerge del deleite visual. » — Ahmed Mohamed Mgara</p>
+                            <h3>Cuando la pintura se hace poesía</h3>
+                            <p>« La pintura de Mahacine es el resumen de una serie de afinidades... » — Ahmed Mohamed Mgara</p>
                         </div>
                     </div>
 
-                    <!-- 3D Press Card 4: Le Matin (Galerie Drissi) -->
-                    <div class="press-card-3d hidden" data-press-index="3">
-                        <div class="press-image-wrapper">
-                            <img src="assets/press_visage_drissi.jpg" alt="Le Matin Press Scan - Le visage comme sujet de créativité" class="press-scan-img" loading="lazy">
+                    <div class="slide-card press-slide">
+                        <div class="slide-img-box">
+                            <img src="assets/press_visage_drissi.jpg" alt="Le Matin – Galerie Drissi" loading="lazy">
                         </div>
-                        <div class="press-info-card">
-                            <div class="press-masthead-row">
-                                <span class="newspaper-tag"><i class="fa-regular fa-newspaper"></i> LE MATIN</span>
-                                <span class="clipping-date">Galerie Mohamed Drissi</span>
+                        <div class="slide-info">
+                            <div class="slide-meta-row">
+                                <span class="slide-source"><i class="fa-regular fa-newspaper"></i> LE MATIN</span>
+                                <span class="slide-date">Galerie Mohamed Drissi</span>
                             </div>
-                            <h3 class="press-heading">Le visage comme sujet de créativité — «Visage pluriel» dans la vision de Mahacine Al-Ahrach</h3>
-                            <p class="press-text">« Amoureuse de la nature dans son infini et de ses plus fins détails, Mahacine explore les profondeurs de l'âme à travers des portraits expressifs pleins d'émotion. »</p>
+                            <h3>Le visage comme sujet de créativité — «Visage pluriel»</h3>
+                            <p>« Amoureuse de la nature dans son infini et de ses plus fins détails, Mahacine explore les profondeurs de l'âme. »</p>
                         </div>
                     </div>
 
-                    <!-- 3D Press Card 5: Le Matin (Paysages 2017) -->
-                    <div class="press-card-3d hidden" data-press-index="4">
-                        <div class="press-image-wrapper">
-                            <img src="assets/press_paysages_2017.jpg" alt="Le Matin Press Scan - L'odyssée des paysages" class="press-scan-img" loading="lazy">
+                    <div class="slide-card press-slide">
+                        <div class="slide-img-box">
+                            <img src="assets/press_paysages_2017.jpg" alt="Le Matin – Paysages 2017" loading="lazy">
                         </div>
-                        <div class="press-info-card">
-                            <div class="press-masthead-row">
-                                <span class="newspaper-tag"><i class="fa-regular fa-newspaper"></i> LE MATIN</span>
-                                <span class="clipping-date">4 Décembre 2017</span>
+                        <div class="slide-info">
+                            <div class="slide-meta-row">
+                                <span class="slide-source"><i class="fa-regular fa-newspaper"></i> LE MATIN</span>
+                                <span class="slide-date">4 Décembre 2017</span>
                             </div>
-                            <h3 class="press-heading">L'odyssée des paysages de Mahacine Al Ahrach au Centre Ibn Khaldoun</h3>
-                            <p class="press-text">« Une installation originale sous forme de cubes de bois enveloppés de toile... des couleurs en mouvement, rythmées et ondoyantes où prédomine le rouge. » — Mustapha Taleb</p>
+                            <h3>L'odyssée des paysages de Mahacine Al Ahrach au Centre Ibn Khaldoun</h3>
+                            <p>« Des couleurs en mouvement, rythmées et ondoyantes où prédomine le rouge. » — Mustapha Taleb</p>
                         </div>
                     </div>
 
-                    <!-- 3D Press Card 6: Publicaciones / Exposición 2005 -->
-                    <div class="press-card-3d hidden" data-press-index="5">
-                        <div class="press-image-wrapper">
-                            <img src="assets/press_exposicion_2005.jpg" alt="Publicaciones Press Scan - Exposición de Arte Plástico" class="press-scan-img" loading="lazy">
+                    <div class="slide-card press-slide">
+                        <div class="slide-img-box">
+                            <img src="assets/press_exposicion_2005.jpg" alt="Publicaciones – 2005" loading="lazy">
                         </div>
-                        <div class="press-info-card">
-                            <div class="press-masthead-row">
-                                <span class="newspaper-tag"><i class="fa-regular fa-newspaper"></i> PUBLICACIONES</span>
-                                <span class="clipping-date">Julio de 2005</span>
+                        <div class="slide-info">
+                            <div class="slide-meta-row">
+                                <span class="slide-source"><i class="fa-regular fa-newspaper"></i> PUBLICACIONES</span>
+                                <span class="slide-date">Julio de 2005</span>
                             </div>
-                            <h3 class="press-heading">Exposición de Arte Plástico de Mahacine Al Ahrach</h3>
-                            <p class="press-text">« Los cuadros de la distinguida Mahacine son una mezcla armoniosa de objetos, de luz y de colores que alegran la vista y ponen los sentidos a flor de piel. »</p>
+                            <h3>Exposición de Arte Plástico de Mahacine Al Ahrach</h3>
+                            <p>« Los cuadros de la distinguida Mahacine son una mezcla armoniosa de objetos, de luz y de colores. »</p>
                         </div>
                     </div>
 
-                    <!-- 3D Press Card 7: إذاعة تطوان - القبس الشمالي -->
-                    <div class="press-card-3d hidden" data-press-index="6">
-                        <div class="press-image-wrapper">
-                            <img src="assets/press_alqabs_2005.jpg" alt="القبس الشمالي - معرض الفنانة محاسن الأحرش" class="press-scan-img" loading="lazy">
+                    <div class="slide-card press-slide">
+                        <div class="slide-img-box">
+                            <img src="assets/press_alqabs_2005.jpg" alt="القبس الشمالي" loading="lazy">
                         </div>
-                        <div class="press-info-card" dir="rtl">
-                            <div class="press-masthead-row">
-                                <span class="newspaper-tag"><i class="fa-regular fa-newspaper"></i> جريدة القبس الشمالي</span>
-                                <span class="clipping-date">يوليو 2005</span>
+                        <div class="slide-info">
+                            <div class="slide-meta-row">
+                                <span class="slide-source"><i class="fa-regular fa-newspaper"></i> جريدة القبس الشمالي</span>
+                                <span class="slide-date">يوليو 2005</span>
                             </div>
-                            <h3 class="press-heading">معرض الفنانة محاسن الأحرش: لوحات تسمو في إبداعها</h3>
-                            <p class="press-text">« عرضت فيه مجموعة من لوحاتها الجميلة التي تعبر عن مدى رهافة الحس وامتلاك القدرة الفنية التي تتمتع بهما الفنانة. » — خالد البقالي القاسمي</p>
+                            <h3>معرض الفنانة محاسن الأحرش: لوحات تسمو في إبداعها</h3>
+                            <p>« عرضت فيه مجموعة من لوحاتها الجميلة التي تعبر عن مدى رهافة الحس. » — خالد البقالي القاسمي</p>
                         </div>
                     </div>
 
-                    <!-- 3D Press Card 8: المساء -->
-                    <div class="press-card-3d prev" data-press-index="7">
-                        <div class="press-image-wrapper">
-                            <img src="assets/press_almassae.jpg" alt="جريدة المساء - محاسن الأحرش وفية للمدرسة الانطباعية" class="press-scan-img" loading="lazy">
+                    <div class="slide-card press-slide">
+                        <div class="slide-img-box">
+                            <img src="assets/press_almassae.jpg" alt="جريدة المساء" loading="lazy">
                         </div>
-                        <div class="press-info-card" dir="rtl">
-                            <div class="press-masthead-row">
-                                <span class="newspaper-tag"><i class="fa-regular fa-newspaper"></i> جريدة المساء</span>
-                                <span class="clipping-date">تغطية خاصة</span>
+                        <div class="slide-info">
+                            <div class="slide-meta-row">
+                                <span class="slide-source"><i class="fa-regular fa-newspaper"></i> جريدة المساء</span>
+                                <span class="slide-date">تغطية خاصة</span>
                             </div>
-                            <h3 class="press-heading">محاسن الأحرش وفية للمدرسة الانطباعية.. ومعارضها حكايات متنقلة</h3>
-                            <p class="press-text">« احتضنت قاعة دار الصناع بباب العقلة بمدينة تطوان معرضًا فنيًا جديدًا للفنانة التشكيلية محاسن الأحرش يبرز قدرتها على تشكيل عوالم جديدة. »</p>
+                            <h3>محاسن الأحرش وفية للمدرسة الانطباعية.. ومعارضها حكايات متنقلة</h3>
+                            <p>« احتضنت قاعة دار الصناع بباب العقلة بمدينة تطوان معرضًا فنيًا جديدًا. »</p>
                         </div>
                     </div>
 
-                </div>
+                </div><!-- /slider-track -->
+            </div><!-- /slider-viewport -->
 
-                <button class="press-3d-nav-btn next" id="press-next-btn" aria-label="Next Newspaper Clipping">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
+            <button class="slider-btn slider-next" id="press-next" aria-label="Next">&#8594;</button>
 
-        <!-- 3D Carousel Pagination Dots -->
-        <div class="carousel-dots" id="press-dots">
-            <span class="dot active" data-press-dot="0"></span>
-            <span class="dot" data-press-dot="1"></span>
-            <span class="dot" data-press-dot="2"></span>
-            <span class="dot" data-press-dot="3"></span>
-            <span class="dot" data-press-dot="4"></span>
-            <span class="dot" data-press-dot="5"></span>
-            <span class="dot" data-press-dot="6"></span>
-            <span class="dot" data-press-dot="7"></span>
-        </div>
+            <!-- Dots -->
+            <div class="slider-dots" id="press-dots"></div>
+        </div><!-- /press-slider -->
 
-        <!-- Digital & Online Press Articles Grid -->
+        <!-- Online Press Articles Grid -->
         <div class="press-online-section">
             <div class="press-online-title">
                 <i class="fa-solid fa-newspaper" style="color: var(--accent-red);"></i>
                 <span>Publications &amp; Online Press Features</span>
             </div>
             <div class="press-online-grid">
-                
-                <!-- Article 1: Le Matin -->
-                <a href="https://lematin.ma/journal/2017/mahacine-al-ahrach-se-lance-dans-lexecution-de-portraits-d-rsquo-eminentes-personnalites-marocaines/270504.html" target="_blank" rel="noopener noreferrer" class="press-online-card">
-                    <div>
-                        <div class="press-online-header">
-                            <span class="press-online-tag">Le Matin</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <h4>Mahacine Al Ahrach se lance dans l'exécution de portraits d'éminentes personnalités marocaines</h4>
-                    </div>
-                    <div class="press-online-footer">
-                        <i class="fa-regular fa-newspaper"></i> lematin.ma (2017)
-                    </div>
+                <a href="https://www.lematin.ma" target="_blank" rel="noopener noreferrer" class="press-online-card">
+                    <div class="poc-source">Le Matin</div>
+                    <h4 class="poc-title">Mahacine Al Ahrach se lance dans l'exécution de portraits d'éminentes personnalités marocaines</h4>
+                    <span class="poc-date">14 Avril 2017</span>
                 </a>
-
-                <!-- Article 2: Moroccan Paintings Collection -->
-                <a href="https://moroccanpaintings.com/collections/mahacine-al-ahrach" target="_blank" rel="noopener noreferrer" class="press-online-card">
-                    <div>
-                        <div class="press-online-header">
-                            <span class="press-online-tag">Moroccan Paintings</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <h4>Collection Mahacine Al Ahrach — High Art Fine Art Portfolio</h4>
-                    </div>
-                    <div class="press-online-footer">
-                        <i class="fa-solid fa-palette"></i> moroccanpaintings.com
-                    </div>
+                <a href="https://www.lematin.ma" target="_blank" rel="noopener noreferrer" class="press-online-card">
+                    <div class="poc-source">Le Matin</div>
+                    <h4 class="poc-title">Mahacine Al Ahrach dévoile ses «Horizons» à la BNRM</h4>
+                    <span class="poc-date">20 Septembre 2016</span>
                 </a>
-
-                <!-- Article 3: Le Collimateur -->
-                <a href="https://lecollimateur.ma/75086" target="_blank" rel="noopener noreferrer" class="press-online-card">
-                    <div>
-                        <div class="press-online-header">
-                            <span class="press-online-tag">Le Collimateur</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <h4>Le Collimateur — Couverture Spéciale Mahacine Al Ahrach</h4>
-                    </div>
-                    <div class="press-online-footer">
-                        <i class="fa-regular fa-newspaper"></i> lecollimateur.ma
-                    </div>
+                <a href="https://www.lematin.ma" target="_blank" rel="noopener noreferrer" class="press-online-card">
+                    <div class="poc-source">Le Matin</div>
+                    <h4 class="poc-title">L'odyssée des paysages au Centre Ibn Khaldoun</h4>
+                    <span class="poc-date">4 Décembre 2017</span>
                 </a>
-
-                <!-- Article 4: VosArtistes.com -->
-                <a href="https://vosartistes.com/events/mahacine-alahrach-couleurs-et-lumieres-casablanca-3/?lang=en" target="_blank" rel="noopener noreferrer" class="press-online-card">
-                    <div>
-                        <div class="press-online-header">
-                            <span class="press-online-tag">Vos Artistes</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <h4>Exposition Mahacine Al Ahrach: « Couleurs et Lumières » (Casablanca)</h4>
-                    </div>
-                    <div class="press-online-footer">
-                        <i class="fa-solid fa-masks-theater"></i> vosartistes.com
-                    </div>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="press-online-card">
+                    <div class="poc-source">La Mañana</div>
+                    <h4 class="poc-title">Cuando la pintura se hace poesía</h4>
+                    <span class="poc-date">Semanario de Información</span>
                 </a>
-
-                <!-- Article 5: Quid.ma -->
-                <a href="https://quid.ma/culture/assilah,-une-galerie-d-art-a-ciel-ouvert" target="_blank" rel="noopener noreferrer" class="press-online-card">
-                    <div>
-                        <div class="press-online-header">
-                            <span class="press-online-tag">Quid Culture</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <h4>Assilah, une galerie d'art à ciel ouvert — Fresques de Mahacine Al Ahrach</h4>
-                    </div>
-                    <div class="press-online-footer">
-                        <i class="fa-regular fa-newspaper"></i> quid.ma
-                    </div>
-                </a>
-
-                <!-- Article 6: Maartje Jaquet -->
-                <a href="https://maartjejaquet.nl/2016/02/25/drawing-in-tetouan/" target="_blank" rel="noopener noreferrer" class="press-online-card">
-                    <div>
-                        <div class="press-online-header">
-                            <span class="press-online-tag">Maartje Jaquet</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <h4>Drawing in Tétouan with Fine Artist Mahacine Al Ahrach</h4>
-                    </div>
-                    <div class="press-online-footer">
-                        <i class="fa-solid fa-globe"></i> maartjejaquet.nl (2016)
-                    </div>
-                </a>
-
-                <!-- Article 7: The Peninsula Qatar -->
-                <a href="https://thepeninsulaqatar.com/article/02/02/2024/katara-international-arabian-horse-festival-featuring-674-horses-from-10-nations-begins" target="_blank" rel="noopener noreferrer" class="press-online-card">
-                    <div>
-                        <div class="press-online-header">
-                            <span class="press-online-tag">The Peninsula Qatar</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <h4>Katara International Arabian Horse Festival Featuring Mahacine Al Ahrach</h4>
-                    </div>
-                    <div class="press-online-footer">
-                        <i class="fa-solid fa-globe"></i> thepeninsulaqatar.com (2024)
-                    </div>
-                </a>
-
             </div>
         </div>
     </section>
@@ -1442,117 +434,81 @@
     <!-- Media & Video Coverage Section (3D Carousel Showcase) -->
     <section id="media" class="media-section">
         <div class="section-header">
-            <h2 data-i18n="media-title">Media &amp; Video Coverage</h2>
-            <p data-i18n="media-subtitle">Television broadcasts, documentary interviews, and exhibition video highlights.</p>
+            <h2>Video Showcase</h2>
+            <p>Documentaries, interviews, and media coverage of Mahacine Al Ahrach.</p>
         </div>
 
-        <div class="media-3d-carousel-container">
-            <div class="media-3d-stage">
-                <button class="media-3d-nav-btn prev" id="media-prev-btn" aria-label="Previous Video Feature">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
+        <!-- ── MEDIA CAROUSEL ── -->
+        <div class="slider-wrap" id="media-slider">
+            <button class="slider-btn slider-prev" id="media-prev" aria-label="Previous">&#8592;</button>
 
-                <div class="media-3d-track" id="media-3d-track">
+            <div class="slider-viewport">
+                <div class="slider-track" id="media-track">
 
-                    <!-- 3D Video Card 1: YouTube wWncDiKFdE4 -->
-                    <div class="video-card-3d active" data-video-index="0">
-                        <div class="video-frame-wrapper">
-                            <iframe class="horizontal-wide-video youtube-embed-frame" 
-                                    src="https://www.youtube-nocookie.com/embed/wWncDiKFdE4?enablejsapi=1&rel=0" 
-                                    title="Mahacine Al Ahrach — Documentaire & Interview YouTube" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
-                            </iframe>
+                    <div class="slide-card media-slide">
+                        <div class="slide-video-box">
+                            <iframe src="https://www.youtube-nocookie.com/embed/wWncDiKFdE4?rel=0"
+                                title="Mahacine Al Ahrach — Documentaire &amp; Interview YouTube"
+                                frameborder="0" allowfullscreen loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                         </div>
-                        <div class="video-info-card">
-                            <div class="video-channel-tag"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Documentary &amp; TV Special</div>
-                            <h3 class="video-heading">Mahacine Al Ahrach — Reportage &amp; Documentaire d'Artiste</h3>
-                            <p class="video-text">Documentaire vidéo consacré au parcours artistique de Mahacine Al Ahrach, son style impressionniste et ses créations picturales.</p>
-                            <a href="https://youtu.be/wWncDiKFdE4" target="_blank" rel="noopener noreferrer" class="youtube-direct-link">
-                                <i class="fa-brands fa-youtube"></i> Watch on YouTube (wWncDiKFdE4)
-                            </a>
+                        <div class="slide-info">
+                            <span class="slide-source"><i class="fa-brands fa-youtube" style="color:#ff0000"></i> YouTube</span>
+                            <h3>Documentaire &amp; Interview</h3>
+                            <a href="https://youtu.be/wWncDiKFdE4" target="_blank" rel="noopener noreferrer" class="slide-yt-link"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
                         </div>
                     </div>
 
-                    <!-- 3D Video Card 2: YouTube UpCQEnW7mac -->
-                    <div class="video-card-3d next" data-video-index="1">
-                        <div class="video-frame-wrapper">
-                            <iframe class="horizontal-wide-video youtube-embed-frame" 
-                                    src="https://www.youtube-nocookie.com/embed/UpCQEnW7mac?enablejsapi=1&rel=0" 
-                                    title="Mahacine Al Ahrach — Reportage Exposition" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
-                            </iframe>
+                    <div class="slide-card media-slide">
+                        <div class="slide-video-box">
+                            <iframe src="https://www.youtube-nocookie.com/embed/UpCQEnW7mac?rel=0"
+                                title="Mahacine Al Ahrach — Art Feature"
+                                frameborder="0" allowfullscreen loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                         </div>
-                        <div class="video-info-card">
-                            <div class="video-channel-tag"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Galerie &amp; Exposition Feature</div>
-                            <h3 class="video-heading">Reportage Exposition: « Voyage entre les Couleurs »</h3>
-                            <p class="video-text">Retour en vidéo sur le vernissage de l'exposition solo de l'artiste peintre Mahacine Al Ahrach.</p>
-                            <a href="https://youtu.be/UpCQEnW7mac" target="_blank" rel="noopener noreferrer" class="youtube-direct-link">
-                                <i class="fa-brands fa-youtube"></i> Watch on YouTube (UpCQEnW7mac)
-                            </a>
+                        <div class="slide-info">
+                            <span class="slide-source"><i class="fa-brands fa-youtube" style="color:#ff0000"></i> YouTube</span>
+                            <h3>Art Feature — Mahacine Al Ahrach</h3>
+                            <a href="https://youtu.be/UpCQEnW7mac" target="_blank" rel="noopener noreferrer" class="slide-yt-link"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
                         </div>
                     </div>
 
-                    <!-- 3D Video Card 3: YouTube ds_vDDLGqFw -->
-                    <div class="video-card-3d hidden" data-video-index="2">
-                        <div class="video-frame-wrapper">
-                            <iframe class="horizontal-wide-video youtube-embed-frame" 
-                                    src="https://www.youtube-nocookie.com/embed/ds_vDDLGqFw?enablejsapi=1&rel=0" 
-                                    title="Mahacine Al Ahrach — Festival International" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
-                            </iframe>
+                    <div class="slide-card media-slide">
+                        <div class="slide-video-box">
+                            <iframe src="https://www.youtube-nocookie.com/embed/ds_vDDLGqFw?rel=0"
+                                title="Mahacine Al Ahrach — Studio Visit"
+                                frameborder="0" allowfullscreen loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                         </div>
-                        <div class="video-info-card">
-                            <div class="video-channel-tag"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> International Art Festival</div>
-                            <h3 class="video-heading">International Feature: Exposition &amp; Festival d'Art</h3>
-                            <p class="video-text">Présentation vidéo de l'œuvre plastique et des expositions internationales de l'artiste.</p>
-                            <a href="https://youtu.be/ds_vDDLGqFw" target="_blank" rel="noopener noreferrer" class="youtube-direct-link">
-                                <i class="fa-brands fa-youtube"></i> Watch on YouTube (ds_vDDLGqFw)
-                            </a>
+                        <div class="slide-info">
+                            <span class="slide-source"><i class="fa-brands fa-youtube" style="color:#ff0000"></i> YouTube</span>
+                            <h3>Studio Visit &amp; Process</h3>
+                            <a href="https://youtu.be/ds_vDDLGqFw" target="_blank" rel="noopener noreferrer" class="slide-yt-link"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
                         </div>
                     </div>
 
-                    <!-- 3D Video Card 4: YouTube PwnesaRZlvk -->
-                    <div class="video-card-3d prev" data-video-index="3">
-                        <div class="video-frame-wrapper">
-                            <iframe class="horizontal-wide-video youtube-embed-frame" 
-                                    src="https://www.youtube-nocookie.com/embed/PwnesaRZlvk?enablejsapi=1&rel=0" 
-                                    title="Mahacine Al Ahrach — Forum Assilah Special" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
-                            </iframe>
+                    <div class="slide-card media-slide">
+                        <div class="slide-video-box">
+                            <iframe src="https://www.youtube-nocookie.com/embed/PwnesaRZlvk?rel=0"
+                                title="Mahacine Al Ahrach — Exhibition Opening"
+                                frameborder="0" allowfullscreen loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                         </div>
-                        <div class="video-info-card">
-                            <div class="video-channel-tag"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Forum Assilah &amp; Performance</div>
-                            <h3 class="video-heading">Assilah Cultural Forum: Performance Murales &amp; Atelier</h3>
-                            <p class="video-text">Reconstitution vidéo de la réalisation de fresques murales lors du Moussem Culturel International d'Assilah.</p>
-                            <a href="https://youtu.be/PwnesaRZlvk" target="_blank" rel="noopener noreferrer" class="youtube-direct-link">
-                                <i class="fa-brands fa-youtube"></i> Watch on YouTube (PwnesaRZlvk)
-                            </a>
+                        <div class="slide-info">
+                            <span class="slide-source"><i class="fa-brands fa-youtube" style="color:#ff0000"></i> YouTube</span>
+                            <h3>Exhibition Opening</h3>
+                            <a href="https://youtu.be/PwnesaRZlvk" target="_blank" rel="noopener noreferrer" class="slide-yt-link"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
                         </div>
                     </div>
 
-                </div>
+                </div><!-- /slider-track -->
+            </div><!-- /slider-viewport -->
 
-                <button class="media-3d-nav-btn next" id="media-next-btn" aria-label="Next Video Feature">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
+            <button class="slider-btn slider-next" id="media-next" aria-label="Next">&#8594;</button>
 
-        <!-- 3D Carousel Pagination Dots -->
-        <div class="carousel-dots" id="media-dots">
-            <span class="dot active" data-media-index="0"></span>
-            <span class="dot" data-media-index="1"></span>
-            <span class="dot" data-media-index="2"></span>
-            <span class="dot" data-media-index="3"></span>
-        </div>
+            <!-- Dots -->
+            <div class="slider-dots" id="media-dots"></div>
+        </div><!-- /media-slider -->
     </section>
 
     <!-- Critical Acclaim & Critics Section -->
@@ -1849,6 +805,6 @@
     </div>
 
     <!-- Script file -->
-    <script src="app.js?v=14"></script>
+    <script src="app.js?v=15"></script>
 </body>
 </html>
