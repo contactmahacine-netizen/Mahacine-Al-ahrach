@@ -2558,6 +2558,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const cardDiv = document.createElement('div');
             cardDiv.innerHTML = createArtworkCardHTML(item, currentRenderCount + idx);
             const articleEl = cardDiv.firstElementChild;
+            if (!articleEl) return;
             articleEl.addEventListener('click', () => openLightbox(articleEl));
             galleryGridContainer.appendChild(articleEl);
         });
