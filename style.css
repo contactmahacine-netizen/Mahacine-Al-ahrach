@@ -5,98 +5,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 :root {
-    /* Color Palette */
-    --bg-base: #08080a;
-    --bg-card: #111115;
-    --bg-card-hover: #16161c;
-    --bg-glass: rgba(10, 10, 14, 0.75);
+    /* Pure Black Luxury Dark Palette */
+    --bg-base: #000000;
+    --bg-card: #0c0c10;
+    --bg-card-hover: #14141c;
+    --bg-glass: rgba(12, 12, 16, 0.85);
     --border-glass: rgba(255, 255, 255, 0.08);
-    --border-glass-hover: rgba(230, 20, 20, 0.3);
-    
+    --border-glass-hover: rgba(230, 20, 20, 0.4);
+
     --accent-red: #e61414;
     --accent-red-hover: #ff3333;
-    --accent-red-glow: rgba(230, 20, 20, 0.15);
-    
-    --text-primary: #f4f4f6;
-    --text-secondary: #9a9ab0;
-    --text-muted: #62627a;
-    
+    --accent-red-glow: rgba(230, 20, 20, 0.2);
+
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b8;
+    --text-muted: #666680;
+
     /* Fonts */
     --font-heading: 'Playfair Display', Georgia, serif;
     --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-    
+
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: all 0.2s ease;
-    
+
     /* Shadows */
-    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5);
-    --shadow-red: 0 0 20px rgba(230, 20, 20, 0.1);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.7);
+    --shadow-red: 0 0 25px rgba(230, 20, 20, 0.25);
 }
 
 /* -------------------------------------------------------
  * LIGHT MODE THEME
  * ------------------------------------------------------- */
-[data-theme="light"] {
-    --bg-base:          #f5f4f0;
-    --bg-card:          #ffffff;
-    --bg-card-hover:    #f0ede8;
-    --bg-glass:         rgba(255, 253, 250, 0.88);
-    --border-glass:     rgba(0, 0, 0, 0.1);
-    --border-glass-hover: rgba(230, 20, 20, 0.35);
 
-    --text-primary:     #141414;
-    --text-secondary:   #555560;
-    --text-muted:       #8a8a9a;
-
-    --shadow-soft:      0 10px 30px rgba(0, 0, 0, 0.12);
-    --shadow-red:       0 0 20px rgba(230, 20, 20, 0.12);
-}
 
 /* Light mode specific overrides */
-[data-theme="light"] body {
-    background-color: var(--bg-base);
-}
 
-[data-theme="light"] .navbar {
-    background: rgba(245, 244, 240, 0.88);
-    border-color: rgba(0,0,0,0.1);
-}
 
-[data-theme="light"] .navbar.scrolled {
-    background: rgba(245, 244, 240, 0.95);
-}
 
-[data-theme="light"] .nav-logo {
-    background: linear-gradient(135deg, #141414, var(--accent-red));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
-[data-theme="light"] .gallery-item img {
-    filter: none;
-}
 
-[data-theme="light"] .hero {
-    background: linear-gradient(160deg, #f0ede8 0%, #e8e4de 50%, #f5f4f0 100%);
-}
 
-[data-theme="light"] .about-section {
-    background: linear-gradient(160deg, #f0ede8 0%, #f5f4f0 100%);
-}
 
-[data-theme="light"] .contact-section {
-    background: #eeebe5;
-}
 
-[data-theme="light"] footer {
-    background: #1a1a1f;
-}
 
-[data-theme="light"] .section-badge {
-    background: rgba(230, 20, 20, 0.1);
-    color: var(--accent-red);
-}
+
+
+
+
+
+
+
+
+
+
 
 /* -------------------------------------------------------
  * THEME TOGGLE BUTTON
@@ -125,10 +87,7 @@
     transform: rotate(15deg);
 }
 
-[data-theme="light"] .theme-toggle-btn {
-    background: rgba(0, 0, 0, 0.05);
-    color: var(--text-secondary);
-}
+
 
 
 /* Reset & Global Styles */
@@ -2639,48 +2598,21 @@ footer {
 }
 
 /* Light mode adjustments for online press cards and info cards */
-[data-theme="light"] .press-online-card {
-    background: #ffffff !important;
-    border: 1px solid #e2e8f0 !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
-}
 
-[data-theme="light"] .press-online-card:hover {
-    background: rgba(230, 20, 20, 0.06) !important;
-    border-color: rgba(230, 20, 20, 0.35) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
-}
 
-[data-theme="light"] .press-online-card h4 {
-    color: #1e293b !important;
-}
 
-[data-theme="light"] .press-online-footer {
-    color: #64748b !important;
-}
 
-[data-theme="light"] .press-info-card,
-[data-theme="light"] .video-info-card {
-    background: #ffffff !important;
-    border: 1px solid #e2e8f0 !important;
-    color: #1e293b !important;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06) !important;
-}
 
-[data-theme="light"] .press-heading,
-[data-theme="light"] .video-heading {
-    color: #0f172a !important;
-}
 
-[data-theme="light"] .press-text,
-[data-theme="light"] .video-text {
-    color: #475569 !important;
-}
 
-[data-theme="light"] .clipping-date,
-[data-theme="light"] .video-channel-tag {
-    color: #64748b !important;
-}
+
+
+
+
+
+
+
+
 
 /* -------------------------------------------------------------
  * REAL ARTWORK GALLERY IMAGES & WHATSAPP INQUIRY BUTTONS
@@ -2754,219 +2686,89 @@ footer {
 /* =============================================================
  * COMPREHENSIVE LIGHT MODE OVERRIDES (Prevents Theme Mixing)
  * ============================================================= */
-[data-theme="light"] {
-    --bg-base:          #f6f5f0;
-    --bg-card:          #ffffff;
-    --bg-card-hover:    #f0ede6;
-    --bg-glass:         rgba(246, 245, 240, 0.88);
-    --border-glass:     rgba(0, 0, 0, 0.08);
-    --border-glass-hover: rgba(230, 20, 20, 0.35);
 
-    --text-primary:     #121214;
-    --text-secondary:   #555562;
-    --text-muted:       #858596;
 
-    --shadow-soft:      0 8px 30px rgba(0, 0, 0, 0.06);
-    --shadow-red:       0 0 20px rgba(230, 20, 20, 0.15);
-}
 
-[data-theme="light"] body {
-    background-color: var(--bg-base);
-    color: var(--text-primary);
-}
 
 /* Header & Navigation */
-[data-theme="light"] .navbar {
-    background: rgba(246, 245, 240, 0.88);
-    border-bottom-color: rgba(0, 0, 0, 0.08);
-}
 
-[data-theme="light"] .navbar.scrolled {
-    background: rgba(246, 245, 240, 0.96);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
 
-[data-theme="light"] .lang-btn,
-[data-theme="light"] .theme-toggle-btn,
-[data-theme="light"] .mobile-menu-btn {
-    background: rgba(0, 0, 0, 0.04);
-    border-color: rgba(0, 0, 0, 0.1);
-    color: var(--text-primary);
-}
 
-[data-theme="light"] .lang-dropdown,
-[data-theme="light"] .nav-dropdown-menu {
-    background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
 
-[data-theme="light"] .lang-option,
-[data-theme="light"] .nav-dropdown-menu a {
-    color: var(--text-primary);
-}
 
-[data-theme="light"] .lang-option:hover,
-[data-theme="light"] .nav-dropdown-menu a:hover {
-    background: rgba(230, 20, 20, 0.06);
-    color: var(--accent-red);
-}
 
-[data-theme="light"] .nav-links {
-    background: rgba(246, 245, 240, 0.98);
-}
+
+
+
+
+
+
+
 
 /* Exhibitions Section in Light Mode */
-[data-theme="light"] .exh-filter-btn {
-    background: rgba(0, 0, 0, 0.04);
-    border-color: rgba(0, 0, 0, 0.1);
-    color: var(--text-secondary);
-}
 
-[data-theme="light"] .exh-badge {
-    background: rgba(0, 0, 0, 0.07);
-    color: var(--text-secondary);
-}
 
-[data-theme="light"] .exh-filter-btn.active {
-    background: var(--accent-red);
-    border-color: var(--accent-red);
-    color: #ffffff;
-}
 
-[data-theme="light"] .exh-filter-btn.active .exh-badge {
-    background: rgba(255, 255, 255, 0.25);
-    color: #ffffff;
-}
 
-[data-theme="light"] .exh-era {
-    background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.08);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-}
 
-[data-theme="light"] .exh-era-btn:hover {
-    background: rgba(0, 0, 0, 0.02);
-}
 
-[data-theme="light"] .exh-era-count {
-    background: rgba(0, 0, 0, 0.04);
-    border-color: rgba(0, 0, 0, 0.08);
-    color: var(--text-secondary);
-}
 
-[data-theme="light"] .exh-card {
-    background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.08);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-}
 
-[data-theme="light"] .exh-card:hover {
-    background: rgba(230, 20, 20, 0.03);
-    border-color: rgba(230, 20, 20, 0.3);
-}
+
+
+
+
+
+
+
+
+
 
 /* Press & Media Sliders in Light Mode */
-[data-theme="light"] .slide-card {
-    background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.08);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-}
 
-[data-theme="light"] .slider-btn {
-    background: rgba(0, 0, 0, 0.05);
-    border-color: rgba(0, 0, 0, 0.12);
-    color: var(--text-primary);
-}
 
-[data-theme="light"] .slider-btn:hover {
-    background: var(--accent-red);
-    border-color: var(--accent-red);
-    color: #ffffff;
-}
 
-[data-theme="light"] .slider-dot {
-    background: rgba(0, 0, 0, 0.18);
-}
 
-[data-theme="light"] .slider-dot.active {
-    background: var(--accent-red);
-}
+
+
+
+
+
 
 /* Online Press Cards */
-[data-theme="light"] .press-online-card {
-    background: #ffffff !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
-}
 
-[data-theme="light"] .press-online-card:hover {
-    background: rgba(230, 20, 20, 0.04) !important;
-    border-color: rgba(230, 20, 20, 0.3) !important;
-}
 
-[data-theme="light"] .poc-title,
-[data-theme="light"] .press-online-card h4 {
-    color: #121214 !important;
-}
 
-[data-theme="light"] .poc-date,
-[data-theme="light"] .press-online-footer {
-    color: #64748b !important;
-}
+
+
+
+
 
 /* Lightbox Modal in Light Mode */
-[data-theme="light"] .lightbox {
-    background: rgba(246, 245, 240, 0.96);
-}
 
-[data-theme="light"] .lightbox-content {
-    background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.1);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-}
 
-[data-theme="light"] .lightbox-details {
-    color: var(--text-primary);
-}
 
-[data-theme="light"] .lightbox-close {
-    background: rgba(0, 0, 0, 0.06);
-    color: var(--text-primary);
-}
 
-[data-theme="light"] .wall-color-selector {
-    background: rgba(246, 245, 240, 0.9);
-    border-color: rgba(0, 0, 0, 0.1);
-}
+
+
+
+
+
 
 /* Contact Form & Input Fields in Light Mode */
-[data-theme="light"] .contact-card,
-[data-theme="light"] .form-group input,
-[data-theme="light"] .form-group textarea {
-    background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.12);
-    color: var(--text-primary);
-}
 
-[data-theme="light"] .form-group input:focus,
-[data-theme="light"] .form-group textarea:focus {
-    border-color: var(--accent-red);
-    box-shadow: 0 0 15px rgba(230, 20, 20, 0.15);
-}
+
+
 
 /* Footer in Light Mode */
-[data-theme="light"] footer {
-    background: #e8e6df;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    color: var(--text-primary);
-}
 
-[data-theme="light"] footer p,
-[data-theme="light"] footer a {
-    color: var(--text-secondary);
-}
 
-[data-theme="light"] footer a:hover {
-    color: var(--accent-red);
+
+
+
+
+/* Pure Black Override */
+body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
 }

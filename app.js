@@ -2466,18 +2466,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-/* ----------------------------------------------------------
-     * 4b. DARK / LIGHT MODE TOGGLE
+    /* ----------------------------------------------------------
+     * PURE BLACK DARK MODE ENFORCER
      * ---------------------------------------------------------- */
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('portfolio-theme', 'dark');
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const themeIcon      = document.getElementById('theme-icon');
-    const htmlEl         = document.documentElement;
-
-    // Restore saved preference
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
-    if (savedTheme === 'light') {
-        htmlEl.setAttribute('data-theme', 'light');
-        if (themeIcon) themeIcon.className = 'fa-solid fa-sun';
+    if (themeToggleBtn) {
+        themeToggleBtn.style.display = 'none'; // Hide theme toggle button
     }
 
     if (themeToggleBtn) {
